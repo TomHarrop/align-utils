@@ -2,12 +2,12 @@ Bootstrap: docker
 From: ubuntu:19.10
 
 %help
-    NGMLR 0.2.7
+    NGMLR 8d76779
     https://github.com/philres/ngmlr
 
 %labels
     MAINTAINER "Tom Harrop"
-    VERSION "NGMLR 0.2.7"
+    VERSION "NGMLR 8d76779"
 
 %post
     # faster apt downloads, will it break?
@@ -39,7 +39,7 @@ _EOF_
     cd ngmlr || exit 1
     git checkout \
         --recurse-submodules --force \
-        v0.2.7
+        8d76779
 
     # build
     mkdir -p build
