@@ -40,6 +40,8 @@ _EOF_
     git checkout \
         --recurse-submodules --force \
         v0.2.7
+
+    # build
     mkdir -p build
     cd build || exit 1
     cmake ..
