@@ -42,7 +42,7 @@ _EOF_
     tar -zxf boost.tar.gz \
         -C /boost \
         --strip-components 1
-
+    rm boost.tar.gz
     )
 
     # download and compile blast
@@ -74,7 +74,7 @@ _EOF_
 
     make && make install
     )
-    rm -rf /blast
+    rm -rf /blast /boost
 
 %runscript
     exec /usr/local/bin/blastn "$@"
