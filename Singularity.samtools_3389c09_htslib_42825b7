@@ -4,8 +4,8 @@ From: ubuntu:19.10
 %help
 
     samtools 3389c09
-    bcftools d6d1ca6
-    htslib 2e36fa6
+    bcftools 034b466
+    htslib 42825b7
     http://www.htslib.org/
 
 %labels
@@ -52,7 +52,9 @@ _EOF_
         https://github.com/samtools/htslib.git \
         /htslib
     cd /htslib || exit 1
-    git checkout -f 2e36fa6
+    # git checkout -f 2e36fa6
+    git fetch origin pull/1059/head:informative_vcf_errors
+    git checkout -f informative_vcf_errors
     git submodule update --init --recursive
     make
     make install
@@ -70,7 +72,7 @@ _EOF_
         https://github.com/samtools/bcftools.git \
         /bcftools
     cd /bcftools || exit 1
-    git checkout -f d6d1ca6
+    git checkout -f 034b466
     git submodule update --init --recursive
     make
     make install
