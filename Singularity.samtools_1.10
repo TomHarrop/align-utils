@@ -45,7 +45,9 @@ _EOF_
         liblzma-dev \
         libncurses-dev \
         python3-matplotlib \
+        texlive-latex-extra \
         texlive-latex-recommended \
+        texlive-plain-generic \
         wget \
         zlib1g-dev
 
