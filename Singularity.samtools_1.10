@@ -2,14 +2,12 @@ Bootstrap: docker
 From: ubuntu:20.04
 
 %help
-
     samtools 1.10
     bcflib 1.10.2
     htslib 1.10.2
     http://www.htslib.org/
 
 %labels
-
     VERSION "samtools 1.10"
 
 %runscript
