@@ -1,16 +1,16 @@
 Bootstrap: docker
-From: ubuntu:19.10
+From: ubuntu:20.04
 
 %help
 
-    samtools 3389c09
-    bcftools 034b466
-    htslib 42825b7
+    samtools 1.10
+    bcflib 1.10.2
+    htslib 1.10.2
     http://www.htslib.org/
 
 %labels
 
-    VERSION "samtools 1.9"
+    VERSION "samtools 1.10"
 
 %runscript
     exec /usr/local/bin/samtools "$@"
@@ -44,6 +44,8 @@ _EOF_
         libcurl4-openssl-dev \
         liblzma-dev \
         libncurses-dev \
+        python3-matplotlib \
+        texlive-latex-recommended \
         wget \
         zlib1g-dev
 
@@ -52,9 +54,7 @@ _EOF_
         https://github.com/samtools/htslib.git \
         /htslib
     cd /htslib || exit 1
-    # git checkout -f 2e36fa6
-    git fetch origin pull/1059/head:informative_vcf_errors
-    git checkout -f informative_vcf_errors
+    git checkout -f  1.10.2 
     git submodule update --init --recursive
     make
     make install
@@ -63,7 +63,7 @@ _EOF_
         https://github.com/samtools/samtools.git \
         /samtools
     cd /samtools || exit 1
-    git checkout -f 3389c09
+    git checkout -f  1.10
     git submodule update --init --recursive
     make
     make install
@@ -72,7 +72,7 @@ _EOF_
         https://github.com/samtools/bcftools.git \
         /bcftools
     cd /bcftools || exit 1
-    git checkout -f 034b466
+    git checkout -f  1.10.2
     git submodule update --init --recursive
     make
     make install
