@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: python:3.7.7-buster
+From: python:3.5.9-buster
 
 %help
     syri 2aff3ba
