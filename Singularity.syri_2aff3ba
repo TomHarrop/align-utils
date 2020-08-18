@@ -15,8 +15,9 @@ From: python:3.5.9-buster
     export PATH="${PATH}:/syri/syri/bin"
 
 %post
+
     /usr/local/bin/pip3 install \
-        biopython \
+        biopython==1.76 \
         Cython \
         matplotlib \
         numpy \
@@ -35,4 +36,4 @@ From: python:3.5.9-buster
     git submodule update --init --recursive
     /usr/local/bin/python3 setup.py install
     chmod 755 syri/bin/syri syri/bin/chroder syri/bin/plotsr
-    ) || exit 0
+    )
