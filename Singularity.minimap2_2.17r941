@@ -8,6 +8,9 @@ From: ubuntu:20.04
     MAINTAINER "Tom Harrop (twharrop@gmail.com)"
     VERSION "minimap2 2.17 (r941)"
 
+%environment
+    export LC_ALL=C
+    
 %post
     export DEBIAN_FRONTEND=noninteractive
     export LC_ALL=C
